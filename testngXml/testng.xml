@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="1" name="FlipkartTestSuite">
+
+	<parameter name="Environment"
+			   value="src/main/resources/prod/prod.properties" />
+
+
+	<test name="Login">
+	<!-- 	<groups>
+			<run>
+				<include name="release_validationAR"></include>
+			</run>
+		</groups> -->
+		<packages> <package name="com.web.locus.testcases"/>
+		</packages>
+		<!--
+        <classes>
+        <class name="com.web.dms.accounting.testcases.JournalManualEntryTestcases"></class>
+        </classes> -->
+	</test>
+</suite>
+

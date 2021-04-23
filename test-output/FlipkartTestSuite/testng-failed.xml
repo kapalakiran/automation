@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [FlipkartTestSuite]">
+  <parameter name="Environment" value="src/main/resources/prod/prod.properties"/>
+  <test thread-count="1" name="Login(failed)">
+    <classes>
+      <class name="com.web.locus.testcases.LocusTestRunner">
+        <methods>
+          <include name="verify"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.web.locus.testcases.LocusTestRunner -->
+    </classes>
+  </test> <!-- Login(failed) -->
+</suite> <!-- Failed suite [FlipkartTestSuite] -->
