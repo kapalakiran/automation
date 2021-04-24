@@ -1,6 +1,7 @@
 package com.web.locus.testcases;
 
-import org.testng.annotations.BeforeMethod;
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import com.util.TestBase;
@@ -14,7 +15,7 @@ public class LocusTestRunner extends TestBase{
 //	}
 	
 	@Test
-	public void verify() {
+	public void verify() throws IOException {
 		new FlipkartHomePage(driver).login();
 	}
 }

@@ -1,5 +1,7 @@
 package com.web.pages.flipkart;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,9 +23,9 @@ public class FlipkartHomePage extends  BaseFunctions{
 	public FlipkartHomePage(WebDriver driver){
 		PageFactory.initElements(driver, this);
 	}
-	public boolean login() {
-		enterText(email_Mob_Tb, "9040143430", "Mobile");
-		enterText(email_Mob_Tb, "9040143430", "Mobile");
+	public boolean login() throws IOException {
+		enterText(email_Mob_Tb,getProperty("Email") , "Email");
+		enterText(password_Tb,getProperty("Password"), "Password");
 		return click(loginBtn, "login");
 	}
 }
