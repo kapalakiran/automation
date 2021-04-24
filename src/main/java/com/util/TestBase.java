@@ -16,7 +16,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
 
-	public WebDriver driver;
+	static public WebDriver driver;
 	static String propertiesFile;
 	Properties property = new  Properties();
 	static {

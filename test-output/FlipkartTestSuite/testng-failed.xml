@@ -6,7 +6,7 @@
     <classes>
       <class name="com.web.locus.testcases.LocusTestRunner">
         <methods>
-          <include name="verify"/>
+          <include name="verifyFlipKartSearchAndFilterFunctionalities"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.web.locus.testcases.LocusTestRunner -->
