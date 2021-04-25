@@ -27,6 +27,9 @@ public class BaseFunctions extends TestBase{
 
 	public void enterText(WebElement element, String textToEnter,String Label) {
 		try {
+			if(element.getAttribute("value").length()>0|| element.getText().length()>0){
+				element.clear();
+			}
 			element.sendKeys(textToEnter);
 		}catch (Exception e) {
 			logFailed(e.getMessage().toString());
