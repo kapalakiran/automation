@@ -56,7 +56,8 @@ public class FlipkartHomePage extends  BaseFunctions{
 	 * @return Boolean
 	 * @description to search the item, verify search drop-downs & then select relevant data
 	 */
-	public void searchItemAndSelectIt(String itemToSearch) {
+	public Boolean searchItemAndVerifyIt(String itemToSearch) {
 		 sendTextAndEnter(search_Tb,itemToSearch,"Search Textbox");
+		 return new SearchedItemPage(driver).verifySearchText(itemToSearch);
 	}
 }

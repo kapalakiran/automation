@@ -13,15 +13,15 @@ import com.web.pages.flipkart.SearchedItemPage;
 public class LocusTestRunner extends BaseFunctions{
 
 	@Test(enabled=true,groups= {"Regression"})
-	@Parameters({"SearchItem","Min","Max","Man1","Man2"})
-	public void verifyFlipKartSearchAndFilterFunctionalities(String searchItem,String min,String max,String man1,String man2) throws IOException, InterruptedException {
+	@Parameters({"SearchItem","Min","Max","Brand1","Brand2"})
+	public void verifyFlipKartSearchAndFilterFunctionalities(String searchItem,String min,String max,String brand1,String brand2) throws IOException, InterruptedException {
 		logInfo("To verify search, filter & add to cart functionality");
 		FlipkartHomePage objFlipkartHomePage = new FlipkartHomePage(driver);
 		objFlipkartHomePage.selectCancelInLoginPopUp();
-		objFlipkartHomePage.searchItemAndSelectIt(searchItem);
+		objFlipkartHomePage.searchItemAndVerifyIt(searchItem);
 		SearchedItemPage objSearchedItemPage = new SearchedItemPage(driver);
 		Boolean selectFilterStatus = objSearchedItemPage.selectMinAndMaxAndVerifyItInFilterValues(min,max);
-		Boolean selectBrandStatus = objSearchedItemPage.selectBrand(Arrays.asList(man1,man2));
+		Boolean selectBrandStatus = objSearchedItemPage.selectBrand(Arrays.asList(brand1,brand2));
 		Boolean addToCartStatus = objSearchedItemPage.selectItemAndAddToCart();
 		if(selectBrandStatus && selectFilterStatus && addToCartStatus)
 			logPassed("Able to verify search,filter & add to cart functionality");

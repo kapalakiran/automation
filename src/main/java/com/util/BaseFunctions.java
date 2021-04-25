@@ -62,6 +62,11 @@ public class BaseFunctions extends TestBase{
 			return false;
 		}
 	}
+	
+	public void clickUsingJavaScript(WebElement element) {
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("arguments[0].click();", element);
+	}
 
 
 	public void logPassed(String passedLog) {

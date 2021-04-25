@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,7 +32,7 @@ public class SearchedItemPage extends BaseFunctions{
 
 	@FindBy(xpath="//span[contains(text(),'Showing')]/following::div[@data-id]")
 	private List<WebElement> itemTiles;
-	
+
 	@FindBy(css="input[placeholder='Search Brand']")
 	private WebElement searchBrandTb;
 
@@ -52,7 +53,7 @@ public class SearchedItemPage extends BaseFunctions{
 			waitUntilElementFound(brandBtn);
 			List<Boolean> brandStatus = new ArrayList<Boolean>();
 			for(int i=0;i<Brands.size();i++) {
-				click(brandBtn, "Brand");
+				clickUsingJavaScript(brandBtn);
 				Thread.sleep(1000);
 				enterText(searchBrandTb,Brands.get(i),"Brand");
 				brandStatus.add(selectValueFromListOfWebElements(brandCbs, Brands.get(i)));
@@ -95,6 +96,7 @@ public class SearchedItemPage extends BaseFunctions{
 		Select selectMax = new Select(minAndMaxPriceDrpDwnBtns.get(1));
 		selectMax.selectByVisibleText(Max);
 		String MinMax = Min+"-"+Max;
+		Thread.sleep(3000);
 		if(verifySearchTextInListOfWebElements(selectedFilterText,MinMax)){
 			logPassed("Able to select the required Min & Max Price");
 			return true;
@@ -117,5 +119,16 @@ public class SearchedItemPage extends BaseFunctions{
 	public Boolean selectItemAndAddToCart() {
 		selectFirstTile();
 		return new DetailedItemViewPage(driver).selectSizeAndAddToCart();
+	}
+
+	/**
+	 * @author kirankumar 
+	 * @description To verify search is working as expected or not
+	 * @param searchText
+	 * @return
+	 */
+	public Boolean verifySearchText(String searchText) {
+		WebElement searchResult = driver.findElement(By.xpath("//*[contains(text(),'results for')]/span[.='"+searchText+"']"));
+		return isElementPresent(searchResult);
 	}
 }

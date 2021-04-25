@@ -9,8 +9,8 @@
 	<parameter name="SearchItem" value="Shoes" />
 	<parameter name="Min" value="₹500" />
 	<parameter name="Max" value="₹3000" />
-	<parameter name="Man1" value="Adidas" />
-	<parameter name="Man2" value="Reebok" />
+	<parameter name="Brand1" value="Adidas" />
+	<parameter name="Brand2" value="Reebok" />
 
 	<test name="Login">
 		<!-- <groups> <run> <include name="Regression"></include> </run> </groups> -->
