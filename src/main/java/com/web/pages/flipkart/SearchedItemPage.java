@@ -50,7 +50,6 @@ public class SearchedItemPage extends BaseFunctions{
 	public Boolean selectBrand(List<String> Brands) {
 		Boolean Status = false;
 		try {
-			waitUntilElementFound(brandBtn);
 			List<Boolean> brandStatus = new ArrayList<Boolean>();
 			for(int i=0;i<Brands.size();i++) {
 				clickUsingJavaScript(brandBtn);
