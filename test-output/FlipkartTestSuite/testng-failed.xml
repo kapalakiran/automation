@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [FlipkartTestSuite]">
+  <parameter name="Min" value="₹500"/>
+  <parameter name="Man1" value="Adidas"/>
+  <parameter name="Max" value="₹3000"/>
   <parameter name="Environment" value="src/main/resources/prod/prod.properties"/>
+  <parameter name="Man2" value="Reebok"/>
+  <parameter name="SearchItem" value="Shoes"/>
   <test thread-count="1" name="Login(failed)">
     <classes>
       <class name="com.web.locus.testcases.LocusTestRunner">
         <methods>
-          <include name="verifyFlipKartSearchAndFilterFunctionalities"/>
+          <include name="verifyFlipKartSearchAndFilterFunctionalities" invocation-numbers="0"/>
           <include name="setUp"/>
           <include name="closeTheBrowser"/>
         </methods>

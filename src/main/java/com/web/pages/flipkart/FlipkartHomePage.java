@@ -56,12 +56,12 @@ public class FlipkartHomePage extends  BaseFunctions{
 	 * @return Boolean
 	 * @description to search the item, verify search drop-downs & then select relevant data
 	 */
-	public Boolean searchItemAndSelectIt(String itemToSearch) {
-		enterText(search_Tb,itemToSearch,"Search Textbox");
-		if(verifySearchTextInListOfWebElements(search_DrpDwns,itemToSearch))
-			logPaassed(itemToSearch+" search is working as expected");
-		else
-			logPaassed(itemToSearch+" search is improper");
-	    return selectValueFromListOfWebElements(search_DrpDwns,itemToSearch);
+	public void searchItemAndSelectIt(String itemToSearch) {
+		 sendTextAndEnter(search_Tb,itemToSearch,"Search Textbox");
+//		if(verifySearchTextInListOfWebElements(search_DrpDwns,itemToSearch))
+//			logPassed(itemToSearch+" search is working as expected");
+//		else
+//			logFailed(itemToSearch+" search is improper");
+//	    return selectValueFromListOfWebElements(search_DrpDwns,itemToSearch);
 	}
 }

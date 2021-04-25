@@ -4,21 +4,22 @@
 <suite thread-count="1" name="FlipkartTestSuite">
 
 	<parameter name="Environment"
-			   value="src/main/resources/prod/prod.properties" />
+		value="src/main/resources/prod/prod.properties" />
 
+	<parameter name="SearchItem" value="Shoes" />
+	<parameter name="Min" value="₹500" />
+	<parameter name="Max" value="₹3000" />
+	<parameter name="Man1" value="Adidas" />
+	<parameter name="Man2" value="Reebok" />
 
 	<test name="Login">
-	<!-- 	<groups>
-			<run>
-				<include name="release_validationAR"></include>
-			</run>
-		</groups> -->
-		<packages> <package name="com.web.locus.testcases"/>
+		<!-- <groups> <run> <include name="Regression"></include> </run> </groups> -->
+		<packages>
+			<package name="com.web.locus.testcases" />
 		</packages>
-		<!--
-        <classes>
-        <class name="com.web.dms.accounting.testcases.JournalManualEntryTestcases"></class>
-        </classes> -->
+
+		<!-- <classes> <class name="com.web.locus.testcases.LocusTestRunner"></class> 
+			</classes> -->
 	</test>
 </suite>
 

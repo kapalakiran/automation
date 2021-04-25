@@ -29,6 +29,9 @@ public class SearchedItemPage extends BaseFunctions{
 	@FindBy(xpath="//div/div[.='TYPE OF SHOES']")
 	private WebElement typeOfShoesBtn;
 
+	@FindBy(xpath="//span[contains(text(),'Showing')]/following::div[@data-id]")
+	private List<WebElement> itemTiles;
+
 	public SearchedItemPage(WebDriver driver){
 		PageFactory.initElements(driver, this);
 	}
@@ -43,7 +46,8 @@ public class SearchedItemPage extends BaseFunctions{
 	public Boolean selectBrand(List<String> Brands) {
 		Boolean Status = false;
 		try {
-			//scrollToElement(typeOfShoesBtn, "Brand Filter");
+			Thread.sleep(4000);
+			waitUntilElementFound(brandBtn);
 			List<Boolean> brandStatus = new ArrayList<Boolean>();
 			for(int i=0;i<Brands.size();i++) {
 				click(brandBtn, "Brand");
@@ -54,7 +58,7 @@ public class SearchedItemPage extends BaseFunctions{
 				Status = true;
 			else
 				Status = false;
-           Collections.sort(Brands);
+			Collections.sort(Brands);
 			if(Status) {
 				List<Boolean> filterStatus = new ArrayList<Boolean>();
 				for(int i=0;i<Brands.size();i++) 
@@ -76,8 +80,10 @@ public class SearchedItemPage extends BaseFunctions{
 	 * @param Min
 	 * @param Max
 	 * @return Boolean
+	 * @throws InterruptedException 
 	 */
-	public Boolean selectMinAndMaxAndVerifyItInFilterValues(String Min,String Max) {
+	public Boolean selectMinAndMaxAndVerifyItInFilterValues(String Min,String Max) throws InterruptedException {
+		waitUntilElementFound(minAndMaxPrice_DrpDwnBtns.get(0));
 		click(minAndMaxPrice_DrpDwnBtns.get(0), "Minimum Price");
 		Select selectMin = new Select(minAndMaxPrice_DrpDwnBtns.get(0));
 		selectMin.selectByVisibleText(Min);
@@ -86,11 +92,26 @@ public class SearchedItemPage extends BaseFunctions{
 		selectMax.selectByVisibleText(Max);
 		String MinMax = Min+"-"+Max;
 		if(verifySearchTextInListOfWebElements(selectedFilter_Text,MinMax)){
-			logPaassed("Able to select the required Min & Max Price");
+			logPassed("Able to select the required Min & Max Price");
 			return true;
 		}else {
 			logFailed("Unable to select the required Min & Max Price");
 			return false;
 		}
+	}
+	/**
+	 * @description To select first item tile
+	 * @return
+	 */
+	public Boolean selectFirstTile() {
+		return click(itemTiles.get(0), "1st Tile");
+	}
+	/**
+	 * @description - To select the 1st tile and add to cart
+	 * @return
+	 */
+	public Boolean selectItemAndAddToCart() {
+		selectFirstTile();
+		return new DetailedItemViewPage().selectSizeAndAddToCart();
 	}
 }

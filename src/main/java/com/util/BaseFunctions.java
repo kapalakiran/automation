@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 public class BaseFunctions extends TestBase{
-	
+
 	public void waitUntilElementFound(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(element));
@@ -30,13 +34,28 @@ public class BaseFunctions extends TestBase{
 	}
 	/**
 	 * @author - kirankumar 
+	 * @param element
+	 * @param textToEnter
+	 * @param Label
+	 * @description - To send text on webelement & press enter
+	 */
+	public void sendTextAndEnter(WebElement element, String textToEnter,String Label) {
+		try {
+			element.sendKeys(textToEnter+Keys.ENTER);
+		}catch (Exception e) {
+			logFailed(e.getMessage().toString());
+		}
+	}
+
+	/**
+	 * @author - kirankumar 
 	 * @param - WebElement element, Label
 	 * @description - To click on webelement
 	 */
 	public Boolean click(WebElement element, String Label) {
 		try {
 			element.click();
-			logPaassed("Able to click on "+Label);
+			logPassed("Able to click on "+Label);
 			return true;
 		}catch (Exception e) {
 			logFailed(e.getMessage().toString());
@@ -45,9 +64,9 @@ public class BaseFunctions extends TestBase{
 	}
 
 
-	public void logPaassed(String passedLog) {
+	public void logPassed(String passedLog) {
 		try {
-		test.pass(passedLog);
+			test.pass(passedLog);
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -82,7 +101,7 @@ public class BaseFunctions extends TestBase{
 		}
 		return Status;
 	}
-	
+
 	public boolean scrollToElement(WebElement ele, String desc) {
 		Boolean success = false;
 		try {
@@ -94,5 +113,23 @@ public class BaseFunctions extends TestBase{
 			logFailed("Unable to scroll"+desc+" "+e.getMessage());
 		}
 		return success;
+	}
+	/**
+	 * @author kirankumar 
+	 * @description Check whether webelement is present or not
+	 * @param element
+	 * @return
+	 */
+	public static boolean isElementPresent(WebElement element) {
+		boolean flag = false;
+		try {
+			if (element.isDisplayed() || element.isEnabled())
+				flag = true;
+		} catch (NoSuchElementException e) {
+			flag = false;
+		} catch (StaleElementReferenceException e) {
+			flag = false;
+		}
+		return flag;
 	}
 }
