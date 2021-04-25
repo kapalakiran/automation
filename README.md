@@ -1,10 +1,14 @@
 # automation
 
-The FlipkartAutomation project is using Selenium Webdriver with Java, Page Object Model Design Pattern with Page Factory, Maven as build tool, TestNG for annotations & executing the testcases,
+# Project Description - 
+
+This project deals with automation of regression testcases of Flipkart Application. We have TC's to verify search,filter, add to cart functionalities etc. 
+
+We are using Selenium Webdriver with Java, Page Object Model Design Pattern with Page Factory, Maven as build tool and TestNG for annotations & executing the testcases,
 
 This project has been divided into 3 source packages
 
-1. src/main/java - 
+#1. src/main/java - 
 
 It has the following packages - 
 
@@ -15,14 +19,14 @@ It has the following packages -
  b. com.web.pages.flipkart
  It has all the page object model classes and functions, validations etc.
 
-2. src/test/java 
+#2. src/test/java 
 
 It has the following package -
 
   a. com.web.locus.testcases
   This package has the test runner class with TestNG annotations.
   
-3. src/main/resources
+#3. src/main/resources
 
 It has the following folder - 
  
