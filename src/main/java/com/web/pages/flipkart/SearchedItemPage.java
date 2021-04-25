@@ -114,9 +114,11 @@ public class SearchedItemPage extends BaseFunctions{
 	/**
 	 * @description - To select the 1st tile and add to cart
 	 * @return
+	 * @throws InterruptedException 
 	 */
-	public Boolean selectItemAndAddToCart() {
+	public Boolean selectItemAndAddToCart() throws InterruptedException {
 		selectFirstTile();
+		switchToLastTabWithOutURL();
 		return new DetailedItemViewPage(driver).selectSizeAndAddToCart();
 	}
 

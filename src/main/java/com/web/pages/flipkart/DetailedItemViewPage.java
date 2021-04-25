@@ -35,10 +35,10 @@ public class DetailedItemViewPage extends BaseFunctions{
 		int i =0;
 		scrollDown();
 		do {
-			click(sizeTiles.get(i), "size");
+			clickUsingActions(sizeTiles.get(i), "size");
 	         i++;
 		}while(!isElementPresent(addToCartAndBuyNowBtns.get(0))); 
-		click(addToCartAndBuyNowBtns.get(1), "Buy Now");
+		clickUsingActions(addToCartAndBuyNowBtns.get(1), "Buy Now");
 		if(isElementPresent(login_SignUpText))
 			return true;
 		else

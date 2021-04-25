@@ -8,6 +8,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -66,11 +67,29 @@ public class BaseFunctions extends TestBase{
 		}
 	}
 	
+	public String switchToLastTabWithOutURL() throws InterruptedException {
+		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+		int LastTab = tabs.size();
+		driver.switchTo().window(tabs.get(LastTab - 1));
+		Thread.sleep(2000);
+		return driver.getCurrentUrl();
+	}
+	
 	public void clickUsingJavaScript(WebElement element) {
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
 	}
-
+    
+	public Boolean clickUsingActions(WebElement element,String Label) {
+		try {
+		Actions actionBuilder = new Actions(driver);
+		actionBuilder.click(element).build().perform();
+		return true;
+		}catch (Exception e) {
+			logFailed(e.toString());
+		}
+		return false;
+	}
 
 	public void logPassed(String passedLog) {
 		try {
