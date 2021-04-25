@@ -60,6 +60,7 @@ public class SearchedItemPage extends BaseFunctions{
 				brandStatus.add(selectValueFromListOfWebElements(brandCbs, Brands.get(i)));
 				Thread.sleep(2000);
 			}
+			Status = brandStatus.stream().allMatch(val -> val == true);
 		}catch(Exception e) {
 			logFailed(e.toString());
 		}

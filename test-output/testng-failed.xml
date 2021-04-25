@@ -11,7 +11,7 @@
     <classes>
       <class name="com.web.locus.testcases.LocusTestRunner">
         <methods>
-          <include name="verifyFlipKartSearchAndFilterFunctionalities" invocation-numbers="0"/>
+          <include name="verifyFlipKartSearchAndFilterFunctionalities"/>
           <include name="setUp"/>
           <include name="closeTheBrowser"/>
         </methods>
