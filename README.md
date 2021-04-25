@@ -19,10 +19,12 @@ Framework, Annotations and Execution : TestNG
     It has the following packages - 
 
     a. com.util 
+          
           This package has all the driver intialisation, wrapper functions like click,enterText etc.,report functions etc.
           It also has Test data generation functions & excel functions
 
     b. com.web.pages.flipkart
+          
           It has all the page object model classes and functions, validations etc.
 
 2. src/test/java 
@@ -30,6 +32,7 @@ Framework, Annotations and Execution : TestNG
     It has the following package -
 
     a. com.web.locus.testcases
+          
           This package has the test runner class with TestNG annotations.
   
 3. src/main/resources
@@ -37,12 +40,21 @@ Framework, Annotations and Execution : TestNG
     It has the following folder - 
 
     a. prod - prod.properties
+          
           Which contains url,other creds if required
+          
+Other important files in the project are as follows- 
 
-Apart from this we have the following files - 
-
- * testngxml/flipkarttestng.xml - which helps us to execute the testcases
- * pom.xml - for adding up the dependencies
- * ExtentReports - for reports
+# testngxml/flipkarttestng.xml 
+ 
+         It helps us to execute the testcases
+          
+# pom.xml
+ 
+        Tt holds the dependencies required for the project execution
+        
+# ExtentReports
+        
+        It is the Open source reporting library used to depict the results of the test execution
  
  
