@@ -51,7 +51,7 @@ Other important files in the project are as follows-
           
 # pom.xml
  
-        Tt holds the dependencies required for the project execution
+        It holds the dependencies required for the project execution
         
 # ExtentReports
         
