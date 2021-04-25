@@ -36,6 +36,7 @@ public class DetailedItemViewPage extends BaseFunctions{
 		scrollDown();
 		do {
 			click(sizeTiles.get(i), "size");
+	         i++;
 		}while(!isElementPresent(addToCartAndBuyNowBtns.get(0))); 
 		click(addToCartAndBuyNowBtns.get(1), "Buy Now");
 		if(isElementPresent(login_SignUpText))
