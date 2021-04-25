@@ -35,7 +35,7 @@ public class SearchedItemPage extends BaseFunctions{
 
 	@FindBy(css="input[placeholder='Search Brand']")
 	private WebElement searchBrandTb;
-	
+
 	@FindBy(xpath="//div[text()='Brand']")
 	private WebElement brandSection;
 
@@ -60,6 +60,9 @@ public class SearchedItemPage extends BaseFunctions{
 				brandStatus.add(selectValueFromListOfWebElements(brandCbs, Brands.get(i)));
 				Thread.sleep(2000);
 			}
+		}catch(Exception e) {
+			logFailed(e.toString());
+		}
 		return Status;
 	}
 

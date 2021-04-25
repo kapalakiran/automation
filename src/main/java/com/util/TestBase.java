@@ -54,7 +54,7 @@ public class TestBase {
 
 	@AfterSuite(alwaysRun=true)
 	public void closeTheBrowser(){
-		driver.close();
+		driver.quit();
 		extent.flush();
 	}
 	
