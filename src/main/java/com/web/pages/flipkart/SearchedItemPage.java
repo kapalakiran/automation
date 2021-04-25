@@ -1,7 +1,6 @@
 package com.web.pages.flipkart;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -27,6 +26,7 @@ public class SearchedItemPage extends BaseFunctions{
 	@FindBy(css="div[class='_2gmUFU _3V8rao']")
 	private List<WebElement> brandBtn;
 
+
 	@FindBy(xpath="//div/div[.='TYPE OF SHOES']")
 	private WebElement typeOfShoesBtn;
 
@@ -35,6 +35,9 @@ public class SearchedItemPage extends BaseFunctions{
 
 	@FindBy(css="input[placeholder='Search Brand']")
 	private WebElement searchBrandTb;
+	
+	@FindBy(xpath="//div[text()='Brand']")
+	private WebElement brandSection;
 
 	public SearchedItemPage(WebDriver driver){
 		PageFactory.initElements(driver, this);
@@ -52,30 +55,11 @@ public class SearchedItemPage extends BaseFunctions{
 		try {
 			List<Boolean> brandStatus = new ArrayList<Boolean>();
 			for(int i=0;i<Brands.size();i++) {
-			    //clickUsingActions(brandBtn.get(0), "Brand");
 				Thread.sleep(2000);
 				enterText(searchBrandTb,Brands.get(i),"Brand");
 				brandStatus.add(selectValueFromListOfWebElements(brandCbs, Brands.get(i)));
 				Thread.sleep(2000);
-				//clickUsingActions(brandBtn.get(0), "Brand");
 			}
-			if(brandStatus.stream().allMatch(val -> val == true))
-				Status = true;
-			else
-				Status = false;
-			Collections.sort(Brands);
-			if(Status) {
-				List<Boolean> filterStatus = new ArrayList<Boolean>();
-				for(int i=0;i<Brands.size();i++) 
-					filterStatus.add(verifySearchTextInListOfWebElements(selectedFilterText,Brands.get(i).toUpperCase()));
-				if(filterStatus.stream().allMatch(val -> val == true))
-					Status = true;
-				else
-					Status = false;
-			}			
-		}catch (Exception e) {
-			logFailed("Unable to select Brand");
-		}
 		return Status;
 	}
 
