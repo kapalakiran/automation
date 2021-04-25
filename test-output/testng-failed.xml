@@ -8,6 +8,7 @@
         <methods>
           <include name="verifyFlipKartSearchAndFilterFunctionalities"/>
           <include name="setUp"/>
+          <include name="closeTheBrowser"/>
         </methods>
       </class> <!-- com.web.locus.testcases.LocusTestRunner -->
     </classes>

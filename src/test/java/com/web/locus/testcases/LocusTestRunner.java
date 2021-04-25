@@ -10,19 +10,14 @@ import com.web.pages.flipkart.FlipkartHomePage;
 import com.web.pages.flipkart.SearchedItemPage;
 
 public class LocusTestRunner extends TestBase{
-
-//	@BeforeMethod(alwaysRun=true)
-//	public void settingUpTheTest() {
-//		System.out.println("T");
-//	}
 	
 	@Test
-	public void verifyFlipKartSearchAndFilterFunctionalities() throws IOException {
+	public void verifyFlipKartSearchAndFilterFunctionalities() throws IOException, InterruptedException {
 		FlipkartHomePage objFlipkartHomePage = new FlipkartHomePage(driver);
 		objFlipkartHomePage.selectCancelInLoginPopUp();
-		objFlipkartHomePage.searchItemAndSelectIt("Shoe");
+		objFlipkartHomePage.searchItemAndSelectIt("Shoes");
 		SearchedItemPage objSearchedItemPage = new SearchedItemPage(driver);
 		objSearchedItemPage.selectMinAndMaxAndVerifyItInFilterValues("₹500","₹4000");
-		objSearchedItemPage.selectBrand(Arrays.asList("Addidas","Reebok"));
+		objSearchedItemPage.selectBrand(Arrays.asList("Adidas","Reebok"));
 	}
 }

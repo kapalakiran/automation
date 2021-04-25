@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -27,7 +28,7 @@ public class FlipkartHomePage extends  BaseFunctions{
 	@FindBy(css="input[title*='Search']")
 	public WebElement search_Tb;
 	
-	@FindBy(css="div#container form[class*=header-form-search]  span:nth-child(1)")
+	@FindAll({@FindBy(css="ul li span"),@FindBy(css="ul li div:nth-child(2)")})
 	private List<WebElement> search_DrpDwns;
 	
 	public FlipkartHomePage(WebDriver driver){
