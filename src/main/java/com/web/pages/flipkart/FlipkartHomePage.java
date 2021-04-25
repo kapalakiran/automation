@@ -14,30 +14,30 @@ import com.util.BaseFunctions;
 public class FlipkartHomePage extends  BaseFunctions{
 
 	@FindBy(xpath="//span[.='Enter Email/Mobile number']/preceding::input[1]")
-	public WebElement email_Mob_Tb;
+	public WebElement emailOrMobileTb;
 	
 	@FindBy(xpath="//span[.='Enter Password']/preceding::input[1]")
-	public WebElement password_Tb;
+	public WebElement passwordTb;
 	
 	@FindBy(css="button[type='submit'] span")
-	public WebElement login_Btn;
+	public WebElement loginBtn;
 	
 	@FindBy(xpath="//button[.='✕']")
-	public WebElement cancel_Btn;
+	public WebElement cancelBtn;
 	
 	@FindBy(css="input[title*='Search']")
 	public WebElement search_Tb;
 	
 	@FindAll({@FindBy(css="ul li span"),@FindBy(css="ul li div:nth-child(2)")})
-	private List<WebElement> search_DrpDwns;
+	private List<WebElement> searchDrpDwns;
 	
 	public FlipkartHomePage(WebDriver driver){
 		PageFactory.initElements(driver, this);
 	}
 	public boolean login() throws IOException {
-		enterText(email_Mob_Tb,getProperty("Email") , "Email");
-		enterText(password_Tb,getProperty("Password"), "Password");
-		return click(login_Btn, "login");
+		enterText(emailOrMobileTb,getProperty("Email") , "Email");
+		enterText(passwordTb,getProperty("Password"), "Password");
+		return click(loginBtn, "login");
 	}
 	
 	/**
@@ -46,8 +46,8 @@ public class FlipkartHomePage extends  BaseFunctions{
 	 * @return Boolean
 	 */
 	public Boolean selectCancelInLoginPopUp() {
-		waitUntilElementFound(cancel_Btn);
-		return click(cancel_Btn, "Cancel");
+		waitUntilElementFound(cancelBtn);
+		return click(cancelBtn, "Cancel");
 	}
 	
 	/**
