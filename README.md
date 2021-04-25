@@ -1,38 +1,43 @@
-# automation
+# Flipkart Automation
 
-# Project Description - 
+# Project Description
 
-This project deals with automation of regression testcases of Flipkart Application. We have TC's to verify search,filter, add to cart functionalities etc. 
+This project deals with automating the Flipkart Application's functionalities. 
+Test Cases are added to verify search, verify filter and verify add to cart functionalities. 
 
-We are using Selenium Webdriver with Java, Page Object Model Design Pattern with Page Factory, Maven as build tool and TestNG for annotations & executing the testcases,
+# Project Description
+Web Application testing done using : Selenium Webdriver
+Programming Language used : Java
+Design Pattern : Page Object Model with Page Factory
+Build Management Tool : Mavane
+Framework, Annotations and Execution : TestNG
 
-This project has been divided into 3 source packages
+# source packages
 
-#1. src/main/java - 
+1. src/main/java - 
 
-It has the following packages - 
+    It has the following packages - 
 
- a. com.util 
- This package has all the driver intialisation, wrapper functions like click,enterText etc.,report functions etc.
- It also has Test data generation functions & excel functions
- 
- b. com.web.pages.flipkart
- It has all the page object model classes and functions, validations etc.
+    a. com.util 
+          This package has all the driver intialisation, wrapper functions like click,enterText etc.,report functions etc.
+          It also has Test data generation functions & excel functions
 
-#2. src/test/java 
+    b. com.web.pages.flipkart
+          It has all the page object model classes and functions, validations etc.
 
-It has the following package -
+2. src/test/java 
 
-  a. com.web.locus.testcases
-  This package has the test runner class with TestNG annotations.
+    It has the following package -
+
+    a. com.web.locus.testcases
+          This package has the test runner class with TestNG annotations.
   
-#3. src/main/resources
+3. src/main/resources
 
-It has the following folder - 
- 
- a. prod - prod.properties
- 
-Which contains url,other creds if required
+    It has the following folder - 
+
+    a. prod - prod.properties
+          Which contains url,other creds if required
 
 Apart from this we have the following files - 
 
