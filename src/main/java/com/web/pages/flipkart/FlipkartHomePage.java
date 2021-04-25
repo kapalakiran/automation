@@ -58,10 +58,5 @@ public class FlipkartHomePage extends  BaseFunctions{
 	 */
 	public void searchItemAndSelectIt(String itemToSearch) {
 		 sendTextAndEnter(search_Tb,itemToSearch,"Search Textbox");
-//		if(verifySearchTextInListOfWebElements(search_DrpDwns,itemToSearch))
-//			logPassed(itemToSearch+" search is working as expected");
-//		else
-//			logFailed(itemToSearch+" search is improper");
-//	    return selectValueFromListOfWebElements(search_DrpDwns,itemToSearch);
 	}
 }

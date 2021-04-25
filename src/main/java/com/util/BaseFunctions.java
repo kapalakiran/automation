@@ -114,6 +114,11 @@ public class BaseFunctions extends TestBase{
 		}
 		return success;
 	}
+
+	public void scrollDown() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,350)", "");
+	}
 	/**
 	 * @author kirankumar 
 	 * @description Check whether webelement is present or not

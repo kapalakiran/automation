@@ -15,15 +15,15 @@ import com.util.BaseFunctions;
 public class SearchedItemPage extends BaseFunctions{
 
 	@FindBy(xpath="//div/div[.='Brand']/ancestor::section/descendant::input[@type='checkbox']/following-sibling::div[2]")
-	private List<WebElement> brand_Cbs;
+	private List<WebElement> brandCbs;
 
 	@FindBy(xpath="//span[.='Price']/following::Select")
-	private List<WebElement> minAndMaxPrice_DrpDwnBtns;
+	private List<WebElement> minAndMaxPriceDrpDwnBtns;
 
 	@FindBy(xpath="//div[text()='✕']/following-sibling::div")
-	private List<WebElement> selectedFilter_Text;
+	private List<WebElement> selectedFilterText;
 
-	@FindBy(xpath="//div/div[.='Brand']")
+	@FindBy(xpath="(//div[.='Brand'])[2]")
 	private WebElement brandBtn;
 
 	@FindBy(xpath="//div/div[.='TYPE OF SHOES']")
@@ -31,6 +31,9 @@ public class SearchedItemPage extends BaseFunctions{
 
 	@FindBy(xpath="//span[contains(text(),'Showing')]/following::div[@data-id]")
 	private List<WebElement> itemTiles;
+	
+	@FindBy(css="input[placeholder='Search Brand']")
+	private WebElement searchBrandTb;
 
 	public SearchedItemPage(WebDriver driver){
 		PageFactory.initElements(driver, this);
@@ -46,12 +49,13 @@ public class SearchedItemPage extends BaseFunctions{
 	public Boolean selectBrand(List<String> Brands) {
 		Boolean Status = false;
 		try {
-			Thread.sleep(4000);
 			waitUntilElementFound(brandBtn);
 			List<Boolean> brandStatus = new ArrayList<Boolean>();
 			for(int i=0;i<Brands.size();i++) {
 				click(brandBtn, "Brand");
-				brandStatus.add(selectValueFromListOfWebElements(brand_Cbs, Brands.get(i)));
+				Thread.sleep(1000);
+				enterText(searchBrandTb,Brands.get(i),"Brand");
+				brandStatus.add(selectValueFromListOfWebElements(brandCbs, Brands.get(i)));
 				Thread.sleep(2000);
 			}
 			if(brandStatus.stream().allMatch(val -> val == true))
@@ -62,7 +66,7 @@ public class SearchedItemPage extends BaseFunctions{
 			if(Status) {
 				List<Boolean> filterStatus = new ArrayList<Boolean>();
 				for(int i=0;i<Brands.size();i++) 
-					filterStatus.add(verifySearchTextInListOfWebElements(selectedFilter_Text,Brands.get(i).toUpperCase()));
+					filterStatus.add(verifySearchTextInListOfWebElements(selectedFilterText,Brands.get(i).toUpperCase()));
 				if(filterStatus.stream().allMatch(val -> val == true))
 					Status = true;
 				else
@@ -83,15 +87,15 @@ public class SearchedItemPage extends BaseFunctions{
 	 * @throws InterruptedException 
 	 */
 	public Boolean selectMinAndMaxAndVerifyItInFilterValues(String Min,String Max) throws InterruptedException {
-		waitUntilElementFound(minAndMaxPrice_DrpDwnBtns.get(0));
-		click(minAndMaxPrice_DrpDwnBtns.get(0), "Minimum Price");
-		Select selectMin = new Select(minAndMaxPrice_DrpDwnBtns.get(0));
+		waitUntilElementFound(minAndMaxPriceDrpDwnBtns.get(0));
+		click(minAndMaxPriceDrpDwnBtns.get(0), "Minimum Price");
+		Select selectMin = new Select(minAndMaxPriceDrpDwnBtns.get(0));
 		selectMin.selectByVisibleText(Min);
-		click(minAndMaxPrice_DrpDwnBtns.get(1), "Maximum Price");
-		Select selectMax = new Select(minAndMaxPrice_DrpDwnBtns.get(1));
+		click(minAndMaxPriceDrpDwnBtns.get(1), "Maximum Price");
+		Select selectMax = new Select(minAndMaxPriceDrpDwnBtns.get(1));
 		selectMax.selectByVisibleText(Max);
 		String MinMax = Min+"-"+Max;
-		if(verifySearchTextInListOfWebElements(selectedFilter_Text,MinMax)){
+		if(verifySearchTextInListOfWebElements(selectedFilterText,MinMax)){
 			logPassed("Able to select the required Min & Max Price");
 			return true;
 		}else {
@@ -112,6 +116,6 @@ public class SearchedItemPage extends BaseFunctions{
 	 */
 	public Boolean selectItemAndAddToCart() {
 		selectFirstTile();
-		return new DetailedItemViewPage().selectSizeAndAddToCart();
+		return new DetailedItemViewPage(driver).selectSizeAndAddToCart();
 	}
 }
