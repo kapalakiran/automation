@@ -95,6 +95,7 @@ public class SearchedItemPage extends BaseFunctions{
 		click(minAndMaxPriceDrpDwnBtns.get(1), "Maximum Price");
 		Select selectMax = new Select(minAndMaxPriceDrpDwnBtns.get(1));
 		selectMax.selectByVisibleText(Max);
+		click(minAndMaxPriceDrpDwnBtns.get(1),"Max Price");
 		String MinMax = Min+"-"+Max;
 		Thread.sleep(3000);
 		if(verifySearchTextInListOfWebElements(selectedFilterText,MinMax)){
