@@ -24,7 +24,7 @@ public class SearchedItemPage extends BaseFunctions{
 	@FindBy(xpath="//div[text()='✕']/following-sibling::div")
 	private List<WebElement> selectedFilterText;
 
-	@FindBy(xpath="//div[.='Brand']")
+	@FindBy(css="div[class='_2gmUFU _3V8rao']")
 	private List<WebElement> brandBtn;
 
 	@FindBy(xpath="//div/div[.='TYPE OF SHOES']")
@@ -52,12 +52,12 @@ public class SearchedItemPage extends BaseFunctions{
 		try {
 			List<Boolean> brandStatus = new ArrayList<Boolean>();
 			for(int i=0;i<Brands.size();i++) {
+			    //clickUsingActions(brandBtn.get(0), "Brand");
 				Thread.sleep(2000);
-				clickUsingActions(brandBtn.get(1),"Brand");
-				Thread.sleep(1000);
 				enterText(searchBrandTb,Brands.get(i),"Brand");
 				brandStatus.add(selectValueFromListOfWebElements(brandCbs, Brands.get(i)));
 				Thread.sleep(2000);
+				//clickUsingActions(brandBtn.get(0), "Brand");
 			}
 			if(brandStatus.stream().allMatch(val -> val == true))
 				Status = true;
@@ -97,7 +97,7 @@ public class SearchedItemPage extends BaseFunctions{
 		selectMax.selectByVisibleText(Max);
 		click(minAndMaxPriceDrpDwnBtns.get(1),"Max Price");
 		String MinMax = Min+"-"+Max;
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		if(verifySearchTextInListOfWebElements(selectedFilterText,MinMax)){
 			logPassed("Able to select the required Min & Max Price");
 			return true;

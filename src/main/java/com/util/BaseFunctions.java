@@ -83,7 +83,7 @@ public class BaseFunctions extends TestBase{
 	public Boolean clickUsingActions(WebElement element,String Label) {
 		try {
 		Actions actionBuilder = new Actions(driver);
-		actionBuilder.click(element).build().perform();
+		actionBuilder.moveToElement(element).click(element).build().perform();
 		return true;
 		}catch (Exception e) {
 			logFailed(e.toString());

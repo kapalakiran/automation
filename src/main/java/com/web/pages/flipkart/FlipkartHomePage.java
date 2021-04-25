@@ -34,11 +34,6 @@ public class FlipkartHomePage extends  BaseFunctions{
 	public FlipkartHomePage(WebDriver driver){
 		PageFactory.initElements(driver, this);
 	}
-	public boolean login() throws IOException {
-		enterText(emailOrMobileTb,getProperty("Email") , "Email");
-		enterText(passwordTb,getProperty("Password"), "Password");
-		return click(loginBtn, "login");
-	}
 	
 	/**
 	 * @author kirankumar
