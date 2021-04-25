@@ -24,8 +24,8 @@ public class SearchedItemPage extends BaseFunctions{
 	@FindBy(xpath="//div[text()='✕']/following-sibling::div")
 	private List<WebElement> selectedFilterText;
 
-	@FindBy(xpath="(//div[.='Brand'])[2]")
-	private WebElement brandBtn;
+	@FindBy(xpath="//div[.='Brand']")
+	private List<WebElement> brandBtn;
 
 	@FindBy(xpath="//div/div[.='TYPE OF SHOES']")
 	private WebElement typeOfShoesBtn;
@@ -52,7 +52,8 @@ public class SearchedItemPage extends BaseFunctions{
 		try {
 			List<Boolean> brandStatus = new ArrayList<Boolean>();
 			for(int i=0;i<Brands.size();i++) {
-				clickUsingJavaScript(brandBtn);
+				Thread.sleep(2000);
+				clickUsingActions(brandBtn.get(1),"Brand");
 				Thread.sleep(1000);
 				enterText(searchBrandTb,Brands.get(i),"Brand");
 				brandStatus.add(selectValueFromListOfWebElements(brandCbs, Brands.get(i)));
