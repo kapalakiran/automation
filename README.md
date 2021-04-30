@@ -22,16 +22,19 @@ Framework, Annotations and Execution : TestNG
           
           This package has all the driver intialisation, wrapper functions like click,enterText etc.,report functions etc.
           It also has Test data generation functions & excel functions
-
-    b. com.web.pages.flipkart
+    b. com.web.pages.amazon
+    c. com.web.pages.flipkart
+    d. com.web.pages.tripadvisor
+    
           
-          It has all the page object model classes and functions, validations etc.
+          The above 3 packages are having the page object model classes and functions, validations etc.
+
 
 2. src/test/java 
 
     It has the following package -
 
-    a. com.web.locus.testcases
+    a. com.web.classplus.testcases
           
           This package has the test runner class with TestNG annotations.
   
@@ -45,7 +48,7 @@ Framework, Annotations and Execution : TestNG
           
 Other important files in the project are as follows- 
 
-# testngxml/flipkarttestng.xml 
+# testngxml/classplustestng.xml
  
          It helps us to execute the testcases
           
