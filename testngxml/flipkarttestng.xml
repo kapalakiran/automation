@@ -6,19 +6,16 @@
 	<parameter name="Environment"
 		value="src/main/resources/prod/prod.properties" />
 
-	<parameter name="SearchItem" value="Shoes" />
-	<parameter name="Min" value="₹500" />
-	<parameter name="Max" value="₹3000" />
-	<parameter name="Brand1" value="Adidas" />
-	<parameter name="Brand2" value="Reebok" />
+	<parameter name="SearchItem" value="iphone xr 64gb - yellow" />
+	<parameter name="SearchKeyword" value ="iphone xr yellow 64 gb" />
 
 	<test name="Login">
 		<!-- <groups> <run> <include name="Regression"></include> </run> </groups> -->
 		<packages>
-			<package name="com.web.locus.testcases" />
+			<package name="com.web.classplus.testcases" />
 		</packages>
 
-		<!-- <classes> <class name="com.web.locus.testcases.LocusTestRunner"></class> 
+		<!-- <classes> <class name="com.web.classplus.testcases.ClassPlusTestRunner"></class> 
 			</classes> -->
 	</test>
 </suite>

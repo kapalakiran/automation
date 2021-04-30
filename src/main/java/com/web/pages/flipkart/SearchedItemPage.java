@@ -23,10 +23,6 @@ public class SearchedItemPage extends BaseFunctions{
 	@FindBy(xpath="//div[text()='✕']/following-sibling::div")
 	private List<WebElement> selectedFilterText;
 
-	@FindBy(css="div[class='_2gmUFU _3V8rao']")
-	private List<WebElement> brandBtn;
-
-
 	@FindBy(xpath="//div/div[.='TYPE OF SHOES']")
 	private WebElement typeOfShoesBtn;
 
@@ -39,13 +35,26 @@ public class SearchedItemPage extends BaseFunctions{
 	@FindBy(xpath="//div[text()='Brand']")
 	private WebElement brandSection;
 
+	@FindBy(xpath="//span[starts-with(@id,'productRating_LST')]/parent::div/preceding::div[1]")
+	private List<WebElement> itemNamesList;
+
+	@FindBy(xpath="//span[starts-with(@id,'productRating_LST')]/following::div[starts-with(text(),'₹')][1]")
+	private List<WebElement> itemPriceList;
+
 	public SearchedItemPage(WebDriver driver){
 		PageFactory.initElements(driver, this);
 	}
-
 	/**
 	 * @author kirankumar
-	 * @createdDate - 24th April 2021
+	 * @param itemName
+	 * @return get Item Price of a specific item
+	 */
+	public String getItemPrice(String itemName) {
+		return matchTextAndFetchTextFromOtherWebElementHavingSameIndex(itemNamesList,itemPriceList,itemName);
+	}
+	
+	/**
+	 * @author kirankumar
 	 * @param Brands
 	 * @return Boolean 
 	 * @description - To select brand in the searched item page

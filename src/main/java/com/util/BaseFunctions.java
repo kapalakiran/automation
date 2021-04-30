@@ -2,6 +2,7 @@ package com.util;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -35,6 +36,15 @@ public class BaseFunctions extends TestBase{
 		}catch (Exception e) {
 			logFailed(e.getMessage().toString());
 		}
+	}
+	/**
+	 * @author - kirankumar
+	 * @param webElement
+	 * @return
+	 */
+	public String getTextUsingJS(WebElement webElement) {
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		return (String) (js.executeScript("return arguments[0].text;", webElement));
 	}
 	/**
 	 * @author - kirankumar 
@@ -146,6 +156,10 @@ public class BaseFunctions extends TestBase{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,350)", "");
 	}
+	
+	public void updateUrl(String url) {
+		driver.get(url);
+	}
 	/**
 	 * @author kirankumar 
 	 * @description Check whether webelement is present or not
@@ -163,5 +177,38 @@ public class BaseFunctions extends TestBase{
 			flag = false;
 		}
 		return flag;
+	}
+	
+	public boolean containsWithIgnoringCase(String sourceString,String wantedString) {
+		return Pattern.compile(Pattern.quote(wantedString), Pattern.CASE_INSENSITIVE).matcher(sourceString).find();
+	}
+
+	public String removeSpecialChars(String text) {
+		return text.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
+	}
+	/**
+	 * @author kirankumar
+	 * @description - To compare text from webelement fetch the text from other webelement with the same index
+	 * @param matchWebElement
+	 * @param fetchTextWebElement
+	 * @param itemName
+	 * @return
+	 */
+	public String matchTextAndFetchTextFromOtherWebElementHavingSameIndex(List<WebElement> matchWebElement,List<WebElement> fetchTextWebElement,String itemName) {
+		try {
+			for(int i=0;i<matchWebElement.size();i++) {
+				if(removeSpecialChars(matchWebElement.get(i).getText()).contains(removeSpecialChars(itemName))) {
+					System.out.println(fetchTextWebElement.get(i).getText());
+					return fetchTextWebElement.get(i).getText();
+				}
+			}
+		}catch (Exception e) {
+			logFailed(e.toString());
+		}
+		return null;
+	}
+	
+	public static String nvl(String ifThisIsNull, String replaceThis) {
+		return ifThisIsNull == null ? replaceThis : ifThisIsNull;
 	}
 }
