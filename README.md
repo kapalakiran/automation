@@ -1,9 +1,11 @@
-# Flipkart Automation
+# Amazon, Flipkart & Trip Advisor Applications Automation
 
 # Project Description
 
-This project deals with automating the Flipkart Application's functionalities. 
-Test Cases are added to verify search, verify filter and verify add to cart functionalities. 
+This project deals with automating the Amazon, Flipkart & Trip Advisor's functionalities. 
+There are two Test Cases in this project - 
+1. To fetch the iPhone XR (64GB) - Yellow in Amazon & Flipkart and then compare it
+2. To search and select trip write a review, perform overall rating, write review, select all hotel reviews & click on submit you review checkbox in trip advisor application
 
 # Project Description
 Web Application testing done using : Selenium Webdriver
