@@ -43,7 +43,8 @@ public class TestBase {
 	public void setUp(String propFile,ITestContext ctx) throws IOException {
 		propertiesFile = propFile;
 		driver = new ChromeDriver();
-		driver.get(getProperty(propFile,"URL"));
+		//We can launch URL if its common for every TC 
+		//driver.get(getProperty(propFile,"URL"));
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		extent.attachReporter(spark);
 		spark.config().setTheme(Theme.DARK);

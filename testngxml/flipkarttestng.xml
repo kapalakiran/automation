@@ -8,6 +8,7 @@
 
 	<parameter name="SearchItem" value="iphone xr 64gb - yellow" />
 	<parameter name="SearchKeyword" value ="iphone xr yellow 64 gb" />
+	<parameter name="SearchText" value ="Club Mahindra" />
 
 	<test name="Login">
 		<!-- <groups> <run> <include name="Regression"></include> </run> </groups> -->

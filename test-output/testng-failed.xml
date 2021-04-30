@@ -3,6 +3,7 @@
 <suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [FlipkartTestSuite]">
   <parameter name="Environment" value="src/main/resources/prod/prod.properties"/>
   <parameter name="SearchKeyword" value="iphone xr yellow 64 gb"/>
+  <parameter name="SearchText" value="Club Mahindra"/>
   <parameter name="SearchItem" value="iphone xr 64gb - yellow"/>
   <test thread-count="1" name="Login(failed)">
     <classes>
@@ -10,7 +11,7 @@
         <methods>
           <include name="setUp"/>
           <include name="closeTheBrowser"/>
-          <include name="comparePriceFromFlipkartAndAmazon" invocation-numbers="0"/>
+          <include name="verifyTripAdvisor" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.web.classplus.testcases.ClassPlusTestRunner -->
     </classes>

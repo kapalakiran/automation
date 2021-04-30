@@ -59,7 +59,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="group-FlipkartTestSuite">
-                    <span>1 group</span>
+                    <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-FlipkartTestSuite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-FlipkartTestSuite" title="com.web.classplus.testcases.ClassPlusTestRunner" hash-for-method="comparePriceFromFlipkartAndAmazon(iphone xr 64gb - yellow, iphone xr yellow 64 gb)">comparePriceFromFlipkartAndAmazon(iphone xr 64gb - yellow, iphone xr yellow 64 gb)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-FlipkartTestSuite" title="com.web.classplus.testcases.ClassPlusTestRunner" hash-for-method="verifyTripAdvisor(Club Mahindra)">verifyTripAdvisor(Club Mahindra)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-FlipkartTestSuite -->
@@ -125,10 +125,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="comparePriceFromFlipkartAndAmazon(iphone xr 64gb - yellow, iphone xr yellow 64 gb)">
-                  </a> <!-- comparePriceFromFlipkartAndAmazon(iphone xr 64gb - yellow, iphone xr yellow 64 gb) -->
-                  <span class="method-name">comparePriceFromFlipkartAndAmazon</span>
-                  <span class="parameters">(iphone xr 64gb - yellow, iphone xr yellow 64 gb)</span>
+                  <a name="verifyTripAdvisor(Club Mahindra)">
+                  </a> <!-- verifyTripAdvisor(Club Mahindra) -->
+                  <span class="method-name">verifyTripAdvisor</span>
+                  <span class="parameters">(Club Mahindra)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -136,7 +136,7 @@
         </div> <!-- panel FlipkartTestSuite -->
         <div panel-name="test-xml-FlipkartTestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/kirankumar/Documents/classplus/testngxml/flipkarttestng.xml</span>
+            <span class="header-content">/Users/kirankumar/Documents/GitHub/classplus/testngxml/flipkarttestng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -145,6 +145,7 @@
 &lt;suite thread-count=&quot;1&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;FlipkartTestSuite&quot;&gt;
   &lt;parameter name=&quot;Environment&quot; value=&quot;src/main/resources/prod/prod.properties&quot;/&gt;
   &lt;parameter name=&quot;SearchKeyword&quot; value=&quot;iphone xr yellow 64 gb&quot;/&gt;
+  &lt;parameter name=&quot;SearchText&quot; value=&quot;Club Mahindra&quot;/&gt;
   &lt;parameter name=&quot;SearchItem&quot; value=&quot;iphone xr 64gb - yellow&quot;/&gt;
   &lt;test thread-count=&quot;1&quot; name=&quot;Login&quot;&gt;
     &lt;packages&gt;
@@ -175,14 +176,6 @@
             <span class="header-content">Groups for FlipkartTestSuite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="test-group">
-              <span class="test-group-name">Regression</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">comparePriceFromFlipkartAndAmazon</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-FlipkartTestSuite" class="panel">
@@ -201,14 +194,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'comparePriceFromFlipkartAndAmazon')
+data.setCell(0, 1, 'verifyTripAdvisor')
 data.setCell(0, 2, 'com.web.classplus.testcases.ClassPlusTestRunner')
-data.setCell(0, 3, 10093);
+data.setCell(0, 3, 19550);
 window.suiteTableData['FlipkartTestSuite']= { tableData: data, tableDiv: 'times-div-FlipkartTestSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 19 seconds</span>
               <div id="times-div-FlipkartTestSuite">
               </div> <!-- times-div-FlipkartTestSuite -->
             </div> <!-- times-div -->
@@ -223,9 +216,16 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-FlipkartTestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.web.classplus.testcases.ClassPlusTestRunner</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">comparePriceFromFlipkartAndAmazon</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-FlipkartTestSuite" class="panel">
@@ -236,16 +236,16 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.web.classplus.testcases.ClassPlusTestRunner</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">setUp(src/main/resources/prod/prod.properties, org.testng.TestRunner@301d8120)</span>
+                <span class="method-name">setUp(src/main/resources/prod/prod.properties, org.testng.TestRunner@601cbd8c)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="test-method">
-                <span class="method-name">comparePriceFromFlipkartAndAmazon(iphone xr 64gb - yellow, iphone xr yellow 64 gb)</span>
-                <span class="method-start">7302 ms</span>
+                <span class="method-name">verifyTripAdvisor(Club Mahindra)</span>
+                <span class="method-start">4139 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">closeTheBrowser</span>
-                <span class="method-start">17608 ms</span>
+                <span class="method-start">23707 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
