@@ -1,11 +1,12 @@
-Flipkart Automation
-Project Description
+# Flipkart Automation
+
+# Project Description
 This project deals with automating the Flipkart Application's functionalities. Test Cases are added to verify search, verify filter and verify add to cart functionalities.
 
-Project Description
+# Project Description
 Web Application testing done using : Selenium Webdriver Programming Language used : Java Design Pattern : Page Object Model with Page Factory Build Management Tool : Mavane Framework, Annotations and Execution : TestNG
 
-source packages
+# source packages
 src/main/java -
 
 It has the following packages -
@@ -33,9 +34,9 @@ a. prod - prod.properties
    Which contains url,other creds if required
 Other important files in the project are as follows-
 
-testngxml/flipkarttestng.xml
+# testngxml/flipkarttestng.xml
      It helps us to execute the testcases
-pom.xml
+# pom.xml
     It holds the dependencies required for the project execution
-ExtentReports
+# ExtentReports
     It is the Open source reporting library used to depict the results of the test execution
