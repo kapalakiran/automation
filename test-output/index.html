@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-FlipkartTestSuite">
-                    <span>classplustestng.xml</span>
+                    <span>flipkarttestng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,12 +102,7 @@
                     <div class="method-list-content passed suite-FlipkartTestSuite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-FlipkartTestSuite" title="com.web.classplus.testcases.ClassPlusTestRunner" hash-for-method="comparePriceFromFlipkartAndAmazon(iphone xr 64gb - yellow, iphone xr yellow 64 gb)">comparePriceFromFlipkartAndAmazon(iphone xr 64gb - yellow, iphone xr yellow 64 gb)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-FlipkartTestSuite" title="com.web.classplus.testcases.ClassPlusTestRunner" hash-for-method="verifyTripAdvisor(Club Mahindra)">verifyTripAdvisor(Club Mahindra)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-FlipkartTestSuite" title="com.web.locus.testcases.LocusTestRunner" hash-for-method="verifyFlipKartSearchAndFilterFunctionalities(Shoes, ₹500, ₹3000, Adidas, Reebok)">verifyFlipKartSearchAndFilterFunctionalities(Shoes, ₹500, ₹3000, Adidas, Reebok)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-FlipkartTestSuite -->
@@ -125,23 +120,15 @@
           <div class="suite-FlipkartTestSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.web.classplus.testcases.ClassPlusTestRunner</span>
+              <span class="class-name">com.web.locus.testcases.LocusTestRunner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="comparePriceFromFlipkartAndAmazon(iphone xr 64gb - yellow, iphone xr yellow 64 gb)">
-                  </a> <!-- comparePriceFromFlipkartAndAmazon(iphone xr 64gb - yellow, iphone xr yellow 64 gb) -->
-                  <span class="method-name">comparePriceFromFlipkartAndAmazon</span>
-                  <span class="parameters">(iphone xr 64gb - yellow, iphone xr yellow 64 gb)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyTripAdvisor(Club Mahindra)">
-                  </a> <!-- verifyTripAdvisor(Club Mahindra) -->
-                  <span class="method-name">verifyTripAdvisor</span>
-                  <span class="parameters">(Club Mahindra)</span>
+                  <a name="verifyFlipKartSearchAndFilterFunctionalities(Shoes, ₹500, ₹3000, Adidas, Reebok)">
+                  </a> <!-- verifyFlipKartSearchAndFilterFunctionalities(Shoes, ₹500, ₹3000, Adidas, Reebok) -->
+                  <span class="method-name">verifyFlipKartSearchAndFilterFunctionalities</span>
+                  <span class="parameters">(Shoes, ₹500, ₹3000, Adidas, Reebok)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -149,23 +136,25 @@
         </div> <!-- panel FlipkartTestSuite -->
         <div panel-name="test-xml-FlipkartTestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/kirankumar/Documents/GitHub/classplus/testngxml/classplustestng.xml</span>
+            <span class="header-content">/Users/kirankumar/Documents/GitHub/classplus/testngxml/flipkarttestng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;1&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;FlipkartTestSuite&quot;&gt;
+  &lt;parameter name=&quot;Min&quot; value=&quot;₹500&quot;/&gt;
+  &lt;parameter name=&quot;Max&quot; value=&quot;₹3000&quot;/&gt;
   &lt;parameter name=&quot;Environment&quot; value=&quot;src/main/resources/prod/prod.properties&quot;/&gt;
-  &lt;parameter name=&quot;SearchKeyword&quot; value=&quot;iphone xr yellow 64 gb&quot;/&gt;
-  &lt;parameter name=&quot;SearchText&quot; value=&quot;Club Mahindra&quot;/&gt;
-  &lt;parameter name=&quot;SearchItem&quot; value=&quot;iphone xr 64gb - yellow&quot;/&gt;
+  &lt;parameter name=&quot;Brand1&quot; value=&quot;Adidas&quot;/&gt;
+  &lt;parameter name=&quot;SearchItem&quot; value=&quot;Shoes&quot;/&gt;
+  &lt;parameter name=&quot;Brand2&quot; value=&quot;Reebok&quot;/&gt;
   &lt;test thread-count=&quot;1&quot; name=&quot;Login&quot;&gt;
     &lt;packages&gt;
-      &lt;package name=&quot;com.web.classplus.testcases&quot;/&gt;
+      &lt;package name=&quot;com.web.locus.testcases&quot;/&gt;
     &lt;/packages&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.web.classplus.testcases.ClassPlusTestRunner&quot;/&gt;
+      &lt;class name=&quot;com.web.locus.testcases.LocusTestRunner&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Login --&gt;
 &lt;/suite&gt; &lt;!-- FlipkartTestSuite --&gt;
@@ -193,7 +182,7 @@
               <span class="test-group-name">Regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">comparePriceFromFlipkartAndAmazon</span>
+                <span class="method-in-group-name">verifyFlipKartSearchAndFilterFunctionalities</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -213,20 +202,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyTripAdvisor')
-data.setCell(0, 2, 'com.web.classplus.testcases.ClassPlusTestRunner')
-data.setCell(0, 3, 16904);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'comparePriceFromFlipkartAndAmazon')
-data.setCell(1, 2, 'com.web.classplus.testcases.ClassPlusTestRunner')
-data.setCell(1, 3, 9784);
+data.setCell(0, 1, 'verifyFlipKartSearchAndFilterFunctionalities')
+data.setCell(0, 2, 'com.web.locus.testcases.LocusTestRunner')
+data.setCell(0, 3, 19254);
 window.suiteTableData['FlipkartTestSuite']= { tableData: data, tableDiv: 'times-div-FlipkartTestSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 26 seconds</span>
+              <span class="suite-total-time">Total running time: 19 seconds</span>
               <div id="times-div-FlipkartTestSuite">
               </div> <!-- times-div-FlipkartTestSuite -->
             </div> <!-- times-div -->
@@ -252,22 +237,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.web.classplus.testcases.ClassPlusTestRunner</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.web.locus.testcases.LocusTestRunner</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">setUp(src/main/resources/prod/prod.properties, org.testng.TestRunner@6ae7deac)</span>
+                <span class="method-name">setUp(src/main/resources/prod/prod.properties, org.testng.TestRunner@3eb631b8)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="test-method">
-                <span class="method-name">comparePriceFromFlipkartAndAmazon(iphone xr 64gb - yellow, iphone xr yellow 64 gb)</span>
-                <span class="method-start">6304 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">verifyTripAdvisor(Club Mahindra)</span>
-                <span class="method-start">16090 ms</span>
+                <span class="method-name">verifyFlipKartSearchAndFilterFunctionalities(Shoes, ₹500, ₹3000, Adidas, Reebok)</span>
+                <span class="method-start">5687 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">closeTheBrowser</span>
-                <span class="method-start">33008 ms</span>
+                <span class="method-start">24954 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

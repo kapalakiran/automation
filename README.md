@@ -1,65 +1,41 @@
-# Amazon, Flipkart & Trip Advisor Applications Automation
+Flipkart Automation
+Project Description
+This project deals with automating the Flipkart Application's functionalities. Test Cases are added to verify search, verify filter and verify add to cart functionalities.
 
-# Project Description
+Project Description
+Web Application testing done using : Selenium Webdriver Programming Language used : Java Design Pattern : Page Object Model with Page Factory Build Management Tool : Mavane Framework, Annotations and Execution : TestNG
 
-This project deals with automating the Amazon, Flipkart & Trip Advisor's functionalities. 
-There are two Test Cases in this project - 
-1. To fetch the iPhone XR (64GB) - Yellow in Amazon & Flipkart and then compare it
-2. To search and select trip write a review, perform overall rating, write review, select all hotel reviews & click on submit you review checkbox in trip advisor application
+source packages
+src/main/java -
 
-# Project Description
-Web Application testing done using : Selenium Webdriver
-Programming Language used : Java
-Design Pattern : Page Object Model with Page Factory
-Build Management Tool : Mavane
-Framework, Annotations and Execution : TestNG
+It has the following packages -
 
-# source packages
+a. com.util
 
-1. src/main/java - 
+   This package has all the driver intialisation, wrapper functions like click,enterText etc.,report functions etc.
+   It also has Test data generation functions & excel functions
+b. com.web.pages.flipkart
 
-    It has the following packages - 
+   It has all the page object model classes and functions, validations etc.
+src/test/java
 
-    a. com.util 
-          
-          This package has all the driver intialisation, wrapper functions like click,enterText etc.,report functions etc.
-          It also has Test data generation functions & excel functions
-    b. com.web.pages.amazon
-    c. com.web.pages.flipkart
-    d. com.web.pages.tripadvisor
-    
-          
-          The above 3 packages are having the page object model classes and functions, validations etc.
+It has the following package -
 
+a. com.web.locus.testcases
 
-2. src/test/java 
+   This package has the test runner class with TestNG annotations.
+src/main/resources
 
-    It has the following package -
+It has the following folder -
 
-    a. com.web.classplus.testcases
-          
-          This package has the test runner class with TestNG annotations.
-  
-3. src/main/resources
+a. prod - prod.properties
 
-    It has the following folder - 
+   Which contains url,other creds if required
+Other important files in the project are as follows-
 
-    a. prod - prod.properties
-          
-          Which contains url,other creds if required
-          
-Other important files in the project are as follows- 
-
-# testngxml/classplustestng.xml
- 
-         It helps us to execute the testcases
-          
-# pom.xml
- 
-        It holds the dependencies required for the project execution
-        
-# ExtentReports
-        
-        It is the Open source reporting library used to depict the results of the test execution
- 
- 
+testngxml/flipkarttestng.xml
+     It helps us to execute the testcases
+pom.xml
+    It holds the dependencies required for the project execution
+ExtentReports
+    It is the Open source reporting library used to depict the results of the test execution

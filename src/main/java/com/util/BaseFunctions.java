@@ -2,8 +2,6 @@ package com.util;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.regex.Pattern;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -21,21 +19,6 @@ public class BaseFunctions extends TestBase{
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
-	
-	public void sendTextWithActions(WebElement element,String textToEnter,String Label) {
-		try {
-		Actions actions = new Actions(driver);
-		actions.moveToElement(element);
-		actions.click();
-		actions.sendKeys(textToEnter);
-		actions.build().perform();
-		logPassed("Able to enter text using actions - "+Label);
-		}catch (Exception e) {
-			logPassed("Unable to enter text using actions - "+Label);
-			logFailed(e.getMessage().toString());
-		}
-		
-	}
 
 	/**
 	 * @author - kirankumar 
@@ -48,36 +31,10 @@ public class BaseFunctions extends TestBase{
 			if(element.getAttribute("value").length()>0|| element.getText().length()>0){
 				element.clear();
 			}
-			sendTexWithoutClear(element,textToEnter,Label);
-		}catch (Exception e) {
-			logFailed(e.getMessage().toString());
-		}
-	}
-
-	/**
-	 * @author kirankumar
-	 * @description - send text without clearing the existing text
-	 * @param element
-	 * @param textToEnter
-	 * @param Label
-	 */
-	public void sendTexWithoutClear(WebElement element, String textToEnter,String Label) {
-		try{
 			element.sendKeys(textToEnter);
-			logPassed("Able to enter text for "+Label);
 		}catch (Exception e) {
-			logPassed("Unable to enter text for "+Label);
 			logFailed(e.getMessage().toString());
 		}
-	}
-	/**
-	 * @author - kirankumar
-	 * @param webElement
-	 * @return
-	 */
-	public String getTextUsingJS(WebElement webElement) {
-		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		return (String) (js.executeScript("return arguments[0].text;", webElement));
 	}
 	/**
 	 * @author - kirankumar 
@@ -109,7 +66,7 @@ public class BaseFunctions extends TestBase{
 			return false;
 		}
 	}
-
+	
 	public String switchToLastTabWithOutURL() throws InterruptedException {
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		int LastTab = tabs.size();
@@ -117,17 +74,17 @@ public class BaseFunctions extends TestBase{
 		Thread.sleep(2000);
 		return driver.getCurrentUrl();
 	}
-
+	
 	public void clickUsingJavaScript(WebElement element) {
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
 	}
-
+    
 	public Boolean clickUsingActions(WebElement element,String Label) {
 		try {
-			Actions actionBuilder = new Actions(driver);
-			actionBuilder.moveToElement(element).click(element).build().perform();
-			return true;
+		Actions actionBuilder = new Actions(driver);
+		actionBuilder.moveToElement(element).click(element).build().perform();
+		return true;
 		}catch (Exception e) {
 			logFailed(e.toString());
 		}
@@ -189,10 +146,6 @@ public class BaseFunctions extends TestBase{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,350)", "");
 	}
-
-	public void updateUrl(String url) {
-		driver.get(url);
-	}
 	/**
 	 * @author kirankumar 
 	 * @description Check whether webelement is present or not
@@ -210,67 +163,5 @@ public class BaseFunctions extends TestBase{
 			flag = false;
 		}
 		return flag;
-	}
-
-	public boolean containsWithIgnoringCase(String sourceString,String wantedString) {
-		return Pattern.compile(Pattern.quote(wantedString), Pattern.CASE_INSENSITIVE).matcher(sourceString).find();
-	}
-
-	public String removeSpecialChars(String text) {
-		return text.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
-	}
-	/**
-	 * @author kirankumar
-	 * @description - To compare text from webelement fetch the text from other webelement with the same index
-	 * @param matchWebElement
-	 * @param fetchTextWebElement
-	 * @param itemName
-	 * @return
-	 */
-	public String matchTextAndFetchTextFromOtherWebElementHavingSameIndex(List<WebElement> matchWebElement,List<WebElement> fetchTextWebElement,String itemName) {
-		try {
-			for(int i=0;i<matchWebElement.size();i++) {
-				if(removeSpecialChars(matchWebElement.get(i).getText()).contains(removeSpecialChars(itemName))) {
-					System.out.println(fetchTextWebElement.get(i).getText());
-					return fetchTextWebElement.get(i).getText();
-				}
-			}
-		}catch (Exception e) {
-			logFailed(e.toString());
-		}
-		return null;
-	}
-
-	public static String nvl(String ifThisIsNull, String replaceThis) {
-		return ifThisIsNull == null ? replaceThis : ifThisIsNull;
-	}
-
-	public static String chars = "ABCDEFGHIJKLMNOPQRST123456";
-	public static String getRandomCharacterLimit(int max) {
-		StringBuilder newStrBuilder = new StringBuilder();
-		Random rnd = new Random();
-		while ( newStrBuilder.length() < max) { // length of the random string.
-			int index = (int) (rnd.nextFloat() * chars.length());
-			newStrBuilder.append(chars.charAt(index));
-		}
-		String newStr =  newStrBuilder.toString();
-		return newStr;
-
-	}
-	
-	public void moveToElementAndClick(WebElement webelement) {
-		Actions objActions = new Actions(driver);
-		objActions.moveToElement(new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(webelement)), 50, 0).click().build().perform();
-	}
-	
-	public void switchToIframe(WebElement element) {
-		try {
-		driver.switchTo().frame(element);
-		logPassed("Able to switch the frame");
-		}catch (Exception e) {
-			logFailed(e.toString());
-			logFailed("Unable to switch the frame");
-		}
-		
 	}
 }

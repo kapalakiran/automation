@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="FlipkartTestSuite" duration-ms="26723" started-at="2021-04-30T23:12:08Z" finished-at="2021-04-30T23:12:35Z">
+  <suite name="FlipkartTestSuite" duration-ms="19273" started-at="2021-05-01T04:35:51Z" finished-at="2021-05-01T04:36:11Z">
     <groups>
       <group name="Regression">
-        <method signature="ClassPlusTestRunner.comparePriceFromFlipkartAndAmazon(java.lang.String, java.lang.String)[pri:0, instance:com.web.classplus.testcases.ClassPlusTestRunner@505fc5a4]" name="comparePriceFromFlipkartAndAmazon" class="com.web.classplus.testcases.ClassPlusTestRunner"/>
+        <method signature="LocusTestRunner.verifyFlipKartSearchAndFilterFunctionalities(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.web.locus.testcases.LocusTestRunner@50b5ac82]" name="verifyFlipKartSearchAndFilterFunctionalities" class="com.web.locus.testcases.LocusTestRunner"/>
       </group> <!-- Regression -->
     </groups>
-    <test name="Login" duration-ms="26723" started-at="2021-04-30T23:12:08Z" finished-at="2021-04-30T23:12:35Z">
-      <class name="com.web.classplus.testcases.ClassPlusTestRunner">
-        <test-method status="PASS" signature="setUp(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.web.classplus.testcases.ClassPlusTestRunner@505fc5a4]" name="setUp" is-config="true" duration-ms="6272" started-at="2021-04-30T23:12:02Z" finished-at="2021-04-30T23:12:08Z">
+    <test name="Login" duration-ms="19273" started-at="2021-05-01T04:35:51Z" finished-at="2021-05-01T04:36:11Z">
+      <class name="com.web.locus.testcases.LocusTestRunner">
+        <test-method status="PASS" signature="setUp(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.web.locus.testcases.LocusTestRunner@50b5ac82]" name="setUp" is-config="true" duration-ms="5671" started-at="2021-05-01T04:35:46Z" finished-at="2021-05-01T04:35:51Z">
           <params>
             <param index="0">
               <value>
@@ -19,45 +19,49 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@6ae7deac]]>
+                <![CDATA[org.testng.TestRunner@3eb631b8]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="comparePriceFromFlipkartAndAmazon(java.lang.String, java.lang.String)[pri:0, instance:com.web.classplus.testcases.ClassPlusTestRunner@505fc5a4]" name="comparePriceFromFlipkartAndAmazon" duration-ms="9784" started-at="2021-04-30T23:12:08Z" finished-at="2021-04-30T23:12:18Z">
+        <test-method status="PASS" signature="verifyFlipKartSearchAndFilterFunctionalities(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.web.locus.testcases.LocusTestRunner@50b5ac82]" name="verifyFlipKartSearchAndFilterFunctionalities" duration-ms="19254" started-at="2021-05-01T04:35:51Z" finished-at="2021-05-01T04:36:11Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[iphone xr 64gb - yellow]]>
+                <![CDATA[Shoes]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[iphone xr yellow 64 gb]]>
+                <![CDATA[₹500]]>
               </value>
             </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- comparePriceFromFlipkartAndAmazon -->
-        <test-method status="PASS" signature="verifyTripAdvisor(java.lang.String)[pri:0, instance:com.web.classplus.testcases.ClassPlusTestRunner@505fc5a4]" name="verifyTripAdvisor" duration-ms="16904" started-at="2021-04-30T23:12:18Z" finished-at="2021-04-30T23:12:35Z">
-          <params>
-            <param index="0">
+            <param index="2">
               <value>
-                <![CDATA[Club Mahindra]]>
+                <![CDATA[₹3000]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Adidas]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Reebok]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyTripAdvisor -->
-        <test-method status="PASS" signature="closeTheBrowser()[pri:0, instance:com.web.classplus.testcases.ClassPlusTestRunner@505fc5a4]" name="closeTheBrowser" is-config="true" duration-ms="2730" started-at="2021-04-30T23:12:35Z" finished-at="2021-04-30T23:12:38Z">
+        </test-method> <!-- verifyFlipKartSearchAndFilterFunctionalities -->
+        <test-method status="PASS" signature="closeTheBrowser()[pri:0, instance:com.web.locus.testcases.LocusTestRunner@50b5ac82]" name="closeTheBrowser" is-config="true" duration-ms="424" started-at="2021-05-01T04:36:11Z" finished-at="2021-05-01T04:36:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeTheBrowser -->
-      </class> <!-- com.web.classplus.testcases.ClassPlusTestRunner -->
+      </class> <!-- com.web.locus.testcases.LocusTestRunner -->
     </test> <!-- Login -->
   </suite> <!-- FlipkartTestSuite -->
 </testng-results>
