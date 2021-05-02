@@ -26,7 +26,6 @@ public class SearchedItemPage extends BaseFunctions{
 	@FindBy(css="div[class='_2gmUFU _3V8rao']")
 	private List<WebElement> brandBtn;
 
-
 	@FindBy(xpath="//div/div[.='TYPE OF SHOES']")
 	private WebElement typeOfShoesBtn;
 

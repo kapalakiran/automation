@@ -3,14 +3,19 @@ package com.util;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.IAnnotationTransformer;
+import org.testng.IInvokedMethod;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.ITestMethodFinder;
+import org.testng.ITestNGListener;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -38,9 +43,9 @@ public class TestBase {
 	 * @throws IOException 
 	 * @description - To create driver object and to launch the url
 	 */
-	@BeforeSuite(alwaysRun = true)
+	@BeforeMethod(alwaysRun = true)
 	@Parameters({"Environment"})
-	public void setUp(String propFile,ITestContext ctx) throws IOException {
+	public void setUp(String propFile,Method method) throws IOException {
 		propertiesFile = propFile;
 		driver = new ChromeDriver();
 		driver.get(getProperty(propFile,"URL"));
@@ -49,10 +54,10 @@ public class TestBase {
 		spark.config().setTheme(Theme.DARK);
 		spark.config().setDocumentTitle("Automation Reports");
 		extent.attachReporter(spark);
-		test = extent.createTest(ctx.getName());
+		test = extent.createTest(method.getName());
 	}
 
-	@AfterSuite(alwaysRun=true)
+	@AfterMethod(alwaysRun=true)
 	public void closeTheBrowser(){
 		driver.quit();
 		extent.flush();

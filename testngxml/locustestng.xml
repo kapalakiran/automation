@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"> 
+
+<suite thread-count="1" name="LocusTestSuite" >
+
+	<parameter name="Environment"
+		value="src/main/resources/prod/locus.properties" />
+
+	<parameter name="InvalidUserID" value="candidate" />
+	<parameter name="ValidUserID" value="test-hiring/personnel/web-test" />
+	<parameter name="InvalidPassword" value="1234" />
+	<parameter name="ValidPassword" value="rhaVcWy?62Vh2pVK" />
+	<parameter name="UserName" value="web-test" />
+	<parameter name="SearchText" value="2020-10-10-test-1" />
+	<parameter name="Address" value="sony signal, koramangala, bangalore" />
+	<parameter name="SLA" value="120" />
+	<parameter name="VisitType" value="Service" />
+	
+	
+	
+	
+
+	<test name="Login">
+		<!-- <groups> <run> <include name="Regression"></include> </run> </groups> -->
+		<!-- <packages>
+			<package name="com.web.locus.testcases" />
+		</packages>
+ -->
+		 <classes> <class name="com.web.locus.testcases.LocusInterviewAssignment"></class> 
+			</classes> 
+	</test>
+</suite>

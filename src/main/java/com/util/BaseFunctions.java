@@ -3,11 +3,13 @@ package com.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,6 +17,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseFunctions extends TestBase{
 
+	/**
+	 * @author kirankumar 
+	 * @description - to wait until element found
+	 * @param element
+	 */
 	public void waitUntilElementFound(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOf(element));
@@ -35,6 +42,21 @@ public class BaseFunctions extends TestBase{
 		}catch (Exception e) {
 			logFailed(e.getMessage().toString());
 		}
+	}
+	/**
+	 * @author kirankumar 
+	 * @description - get current url & compare it
+	 * @param url
+	 * @return
+	 * @throws InterruptedException 
+	 */
+	public Boolean getCurrentUrlAndCompareIt(String url) {
+		if(driver.getCurrentUrl().equals(url)) {
+			logPassed("URL is same as expected");
+			return true;
+		}else
+			logFailed("URL is different than expected");
+		return false;
 	}
 	/**
 	 * @author - kirankumar 
@@ -66,7 +88,7 @@ public class BaseFunctions extends TestBase{
 			return false;
 		}
 	}
-	
+
 	public String switchToLastTabWithOutURL() throws InterruptedException {
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		int LastTab = tabs.size();
@@ -74,17 +96,17 @@ public class BaseFunctions extends TestBase{
 		Thread.sleep(2000);
 		return driver.getCurrentUrl();
 	}
-	
+
 	public void clickUsingJavaScript(WebElement element) {
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", element);
 	}
-    
+
 	public Boolean clickUsingActions(WebElement element,String Label) {
 		try {
-		Actions actionBuilder = new Actions(driver);
-		actionBuilder.moveToElement(element).click(element).build().perform();
-		return true;
+			Actions actionBuilder = new Actions(driver);
+			actionBuilder.moveToElement(element).click(element).build().perform();
+			return true;
 		}catch (Exception e) {
 			logFailed(e.toString());
 		}
@@ -95,7 +117,7 @@ public class BaseFunctions extends TestBase{
 		try {
 			test.pass(passedLog);
 		}catch (Exception e) {
-			System.out.println(e.getMessage());
+			logFailed(e.getMessage());
 		}
 	}
 
@@ -128,20 +150,10 @@ public class BaseFunctions extends TestBase{
 		}
 		return Status;
 	}
-
-	public boolean scrollToElement(WebElement ele, String desc) {
-		Boolean success = false;
-		try {
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", ele);
-			if (desc != null)
-				logInfo("Scrolled to :" + desc);
-			success = true;
-		} catch (Exception e) {
-			logFailed("Unable to scroll"+desc+" "+e.getMessage());
-		}
-		return success;
-	}
-
+	/**
+	 * @author kirankumar 
+	 * @description to scroll down
+	 */
 	public void scrollDown() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,350)", "");
@@ -163,5 +175,30 @@ public class BaseFunctions extends TestBase{
 			flag = false;
 		}
 		return flag;
+	}
+
+	public void customWait(long var) throws InterruptedException {
+		Thread.sleep(var);
+	}
+	/**
+	 * @author kirankumar
+	 * @param element
+	 * @description - to hover on particular webelment
+	 */
+	public void mouseHover(WebElement element) {
+		Actions actions = new Actions(driver);
+		Action mouseOverHome = actions.moveToElement(element).build();
+		mouseOverHome.perform(); 
+	}
+
+	/**
+	 * @author kirankumar 
+	 * @description - Select webelement using text 
+	 * @param value
+	 * @return
+	 */
+	public Boolean selectUsingText(String value) {
+		WebElement we = driver.findElement(By.xpath("//*[contains(text(),'" + value + "')]"));
+		return click(we, value);
 	}
 }

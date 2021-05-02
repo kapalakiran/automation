@@ -1,67 +1,278 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="FlipkartTestSuite" duration-ms="19273" started-at="2021-05-01T04:35:51Z" finished-at="2021-05-01T04:36:11Z">
+  <suite name="LocusTestSuite" duration-ms="124342" started-at="2021-05-01T18:36:22Z" finished-at="2021-05-01T18:38:27Z">
     <groups>
-      <group name="Regression">
-        <method signature="LocusTestRunner.verifyFlipKartSearchAndFilterFunctionalities(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.web.locus.testcases.LocusTestRunner@50b5ac82]" name="verifyFlipKartSearchAndFilterFunctionalities" class="com.web.locus.testcases.LocusTestRunner"/>
-      </group> <!-- Regression -->
     </groups>
-    <test name="Login" duration-ms="19273" started-at="2021-05-01T04:35:51Z" finished-at="2021-05-01T04:36:11Z">
-      <class name="com.web.locus.testcases.LocusTestRunner">
-        <test-method status="PASS" signature="setUp(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.web.locus.testcases.LocusTestRunner@50b5ac82]" name="setUp" is-config="true" duration-ms="5671" started-at="2021-05-01T04:35:46Z" finished-at="2021-05-01T04:35:51Z">
+    <test name="Login" duration-ms="124342" started-at="2021-05-01T18:36:22Z" finished-at="2021-05-01T18:38:27Z">
+      <class name="com.web.locus.testcases.LocusInterviewAssignment">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="setUp" is-config="true" duration-ms="8698" started-at="2021-05-01T18:36:22Z" finished-at="2021-05-01T18:36:31Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[src/main/resources/prod/prod.properties]]>
+                <![CDATA[src/main/resources/prod/locus.properties]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@3eb631b8]]>
+                <![CDATA[public void com.web.locus.testcases.LocusInterviewAssignment.verifyLoginFunctionalityWithInvalidCredentials(java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyFlipKartSearchAndFilterFunctionalities(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.web.locus.testcases.LocusTestRunner@50b5ac82]" name="verifyFlipKartSearchAndFilterFunctionalities" duration-ms="19254" started-at="2021-05-01T04:35:51Z" finished-at="2021-05-01T04:36:11Z">
+        <test-method status="PASS" signature="selectTheLoginBtn()[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="selectTheLoginBtn" is-config="true" duration-ms="4855" started-at="2021-05-01T18:36:31Z" finished-at="2021-05-01T18:36:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectTheLoginBtn -->
+        <test-method status="PASS" signature="verifyLoginFunctionalityWithInvalidCredentials(java.lang.String, java.lang.String)[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="verifyLoginFunctionalityWithInvalidCredentials" duration-ms="7744" started-at="2021-05-01T18:36:36Z" finished-at="2021-05-01T18:36:44Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Shoes]]>
+                <![CDATA[candidate]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[₹500]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[₹3000]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Adidas]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Reebok]]>
+                <![CDATA[1234]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyFlipKartSearchAndFilterFunctionalities -->
-        <test-method status="PASS" signature="closeTheBrowser()[pri:0, instance:com.web.locus.testcases.LocusTestRunner@50b5ac82]" name="closeTheBrowser" is-config="true" duration-ms="424" started-at="2021-05-01T04:36:11Z" finished-at="2021-05-01T04:36:11Z">
+        </test-method> <!-- verifyLoginFunctionalityWithInvalidCredentials -->
+        <test-method status="PASS" signature="closeTheBrowser()[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="closeTheBrowser" is-config="true" duration-ms="541" started-at="2021-05-01T18:36:44Z" finished-at="2021-05-01T18:36:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeTheBrowser -->
-      </class> <!-- com.web.locus.testcases.LocusTestRunner -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="setUp" is-config="true" duration-ms="4917" started-at="2021-05-01T18:36:44Z" finished-at="2021-05-01T18:36:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[src/main/resources/prod/locus.properties]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.web.locus.testcases.LocusInterviewAssignment.verifyLoginFunctionalityWithValidCredentials(java.lang.String,java.lang.String) throws java.io.IOException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="selectTheLoginBtn()[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="selectTheLoginBtn" is-config="true" duration-ms="2790" started-at="2021-05-01T18:36:49Z" finished-at="2021-05-01T18:36:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectTheLoginBtn -->
+        <test-method status="PASS" signature="verifyLoginFunctionalityWithValidCredentials(java.lang.String, java.lang.String)[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="verifyLoginFunctionalityWithValidCredentials" duration-ms="9335" started-at="2021-05-01T18:36:52Z" finished-at="2021-05-01T18:37:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test-hiring/personnel/web-test]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[rhaVcWy?62Vh2pVK]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginFunctionalityWithValidCredentials -->
+        <test-method status="PASS" signature="closeTheBrowser()[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="closeTheBrowser" is-config="true" duration-ms="176" started-at="2021-05-01T18:37:01Z" finished-at="2021-05-01T18:37:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeTheBrowser -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="setUp" is-config="true" duration-ms="4023" started-at="2021-05-01T18:37:01Z" finished-at="2021-05-01T18:37:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[src/main/resources/prod/locus.properties]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.web.locus.testcases.LocusInterviewAssignment.verifyProfileIconFunctionality(java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="selectTheLoginBtn()[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="selectTheLoginBtn" is-config="true" duration-ms="2085" started-at="2021-05-01T18:37:05Z" finished-at="2021-05-01T18:37:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectTheLoginBtn -->
+        <test-method status="PASS" signature="verifyProfileIconFunctionality(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="verifyProfileIconFunctionality" duration-ms="11961" started-at="2021-05-01T18:37:08Z" finished-at="2021-05-01T18:37:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test-hiring/personnel/web-test]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[rhaVcWy?62Vh2pVK]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[web-test]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProfileIconFunctionality -->
+        <test-method status="PASS" signature="closeTheBrowser()[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="closeTheBrowser" is-config="true" duration-ms="212" started-at="2021-05-01T18:37:19Z" finished-at="2021-05-01T18:37:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeTheBrowser -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="setUp" is-config="true" duration-ms="5279" started-at="2021-05-01T18:37:20Z" finished-at="2021-05-01T18:37:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[src/main/resources/prod/locus.properties]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.web.locus.testcases.LocusInterviewAssignment.verifySearchForAtaskWithTaskId(java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="selectTheLoginBtn()[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="selectTheLoginBtn" is-config="true" duration-ms="2469" started-at="2021-05-01T18:37:25Z" finished-at="2021-05-01T18:37:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectTheLoginBtn -->
+        <test-method status="PASS" signature="verifySearchForAtaskWithTaskId(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="verifySearchForAtaskWithTaskId" duration-ms="11225" started-at="2021-05-01T18:37:27Z" finished-at="2021-05-01T18:37:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test-hiring/personnel/web-test]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[rhaVcWy?62Vh2pVK]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2020-10-10-test-1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchForAtaskWithTaskId -->
+        <test-method status="PASS" signature="closeTheBrowser()[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="closeTheBrowser" is-config="true" duration-ms="170" started-at="2021-05-01T18:37:39Z" finished-at="2021-05-01T18:37:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeTheBrowser -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="setUp" is-config="true" duration-ms="4640" started-at="2021-05-01T18:37:39Z" finished-at="2021-05-01T18:37:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[src/main/resources/prod/locus.properties]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.web.locus.testcases.LocusInterviewAssignment.createAServiceTask(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="selectTheLoginBtn()[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="selectTheLoginBtn" is-config="true" duration-ms="2062" started-at="2021-05-01T18:37:43Z" finished-at="2021-05-01T18:37:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectTheLoginBtn -->
+        <test-method status="PASS" signature="createAServiceTask(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="createAServiceTask" duration-ms="22378" started-at="2021-05-01T18:37:46Z" finished-at="2021-05-01T18:38:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test-hiring/personnel/web-test]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[rhaVcWy?62Vh2pVK]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[sony signal, koramangala, bangalore]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Service]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[120]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAServiceTask -->
+        <test-method status="PASS" signature="closeTheBrowser()[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="closeTheBrowser" is-config="true" duration-ms="193" started-at="2021-05-01T18:38:08Z" finished-at="2021-05-01T18:38:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeTheBrowser -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="setUp" is-config="true" duration-ms="4526" started-at="2021-05-01T18:38:08Z" finished-at="2021-05-01T18:38:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[src/main/resources/prod/locus.properties]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void com.web.locus.testcases.LocusInterviewAssignment.searchForCreatedTask(java.lang.String,java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="selectTheLoginBtn()[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="selectTheLoginBtn" is-config="true" duration-ms="3429" started-at="2021-05-01T18:38:13Z" finished-at="2021-05-01T18:38:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectTheLoginBtn -->
+        <test-method status="PASS" signature="searchForCreatedTask(java.lang.String, java.lang.String)[pri:2, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="searchForCreatedTask" duration-ms="10391" started-at="2021-05-01T18:38:16Z" finished-at="2021-05-01T18:38:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[test-hiring/personnel/web-test]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[rhaVcWy?62Vh2pVK]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchForCreatedTask -->
+        <test-method status="PASS" signature="closeTheBrowser()[pri:0, instance:com.web.locus.testcases.LocusInterviewAssignment@10163d6]" name="closeTheBrowser" is-config="true" duration-ms="214" started-at="2021-05-01T18:38:26Z" finished-at="2021-05-01T18:38:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeTheBrowser -->
+      </class> <!-- com.web.locus.testcases.LocusInterviewAssignment -->
     </test> <!-- Login -->
-  </suite> <!-- FlipkartTestSuite -->
+  </suite> <!-- LocusTestSuite -->
 </testng-results>
