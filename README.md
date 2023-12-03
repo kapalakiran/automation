@@ -1,10 +1,10 @@
 # Flipkart Automation
 
 # Project Description
-This project deals with automating the Flipkart Application's functionalities. Test Cases are added to verify search, verify filter and verify add to cart functionalities.
+This project deals with automating the Flipkart Application's functionalities. Test Cases are added to verify search, verify filter, and verify add-to-cart functionalities.
 
 # Project Description
-Web Application testing done using : Selenium Webdriver Programming Language used : Java Design Pattern : Page Object Model with Page Factory Build Management Tool : Mavane Framework, Annotations and Execution : TestNG
+Web Application testing done using: Selenium Webdriver Programming Language used: Java Design Pattern: Page Object Model with Page Factory Build Management Tool: Maven Framework, Annotations and Execution: TestNG
 
 # source packages
 src/main/java -
@@ -31,7 +31,7 @@ It has the following folder -
 
 a. prod - prod.properties
 
-   Which contains url,other creds if required
+   Which contains url, other creds if required
 Other important files in the project are as follows-
 
 # testngxml/flipkarttestng.xml
